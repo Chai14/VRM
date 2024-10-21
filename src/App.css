@@ -19,10 +19,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem 3rem;
-  backdrop-filter: blur(15px); 
-  -webkit-backdrop-filter: blur(15px); 
- 
+  padding: 0.5rem 3rem;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 100;
 }
 
 /* Logo styling */
@@ -31,11 +31,11 @@ nav img {
   height: auto;
   padding: 10px;
   margin-left: 5rem;
-  
+
   /* Add glossy shadow */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
   border-radius: 10px; /* Slight rounding for a glossy effect */
-  
+
   /* Glossy effect */
   position: relative;
   background-color: white;
@@ -53,8 +53,14 @@ nav img::before {
   z-index: 1;
 }
 
-
 /* Navigation list */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-left: auto; /* Keep the ul aligned to the right */
+  align-items: center;
+}
+
 nav ul a {
   margin-left: 20px;
   color: #2e2e2e;
@@ -62,16 +68,86 @@ nav ul a {
   cursor: pointer;
   font-weight: 600;
   transition: color 0.3s ease;
-  text-decoration: none; 
+  text-decoration: none;
 }
-
 
 nav ul a:hover {
-  color: #3c7a49;
-  /* Change color on hover */
+  color: #3c7a49; /* Change color on hover */
 }
 
-/* ------------------------------------------------------------------ HERO -------------------------------------------------- */
+/* --------------------------- Responsive Adjustments --------------------------- */
+
+/* Adjust padding and size for medium screens (tablets) */
+@media (max-width: 768px) {
+  nav {
+    padding: 0.5rem 2rem;
+  }
+
+  nav img {
+    width: 80px; /* Make logo smaller */
+    margin-left: 3rem; /* Adjust spacing for the logo */
+  }
+
+  nav ul a {
+    font-size: 14px; /* Decrease font size slightly */
+    margin-left: 15px; /* Reduce spacing between links */
+  }
+}
+
+/* Adjust padding and size for small screens (phones) */
+@media (max-width: 425px) {
+  nav {
+    padding: 0.5rem 1.5rem;
+  }
+
+  nav img {
+    width: 70px; /* Smaller logo for small screens */
+    margin-left: 2.5rem; /* Add more space between logo and ul */
+  }
+
+  nav ul a {
+    font-size: 12px; /* Smaller font size for mobile */
+    margin-left: 10px; /* Closer spacing between links */
+  }
+}
+
+/* Further adjust for very small screens (375px) */
+@media (max-width: 375px) {
+  nav {
+    padding: 0.5rem 1.2rem;
+  }
+
+  nav img {
+    width: 65px; /* Smaller logo for very small screens */
+    margin-left: 2rem; /* Increase the left margin */
+  }
+
+  nav ul a {
+    font-size: 12px; /* Keep font size for small screens */
+    margin-left: 8px; /* Adjust spacing for links */
+  }
+}
+
+/* For very small screens (320px and below) */
+@media (max-width: 320px) {
+  nav {
+    padding: 0.5rem 1rem;
+  }
+
+  nav img {
+    width: 60px; /* Smallest logo size */
+    margin-left: 1.5rem; /* More space for the smallest screen */
+  }
+
+  nav ul a {
+    font-size: 11px; /* Adjust font size for smallest screens */
+    margin-left: 8px; /* Minimal spacing for small links */
+  }
+}
+
+
+/* --------------------------- HERO --------------------------- */
+
 .hero-container {
   padding: 2rem 4rem;
   display: flex;
@@ -80,10 +156,12 @@ nav ul a:hover {
   height: 90vh;
   margin-top: 3rem;
   background: linear-gradient(180deg, 
-    rgba(247, 255, 252, 1) 0%,    /* Light at the top */
+    rgba(247, 255, 252, 1) 0%,    
     rgb(225, 236, 229) 40%,   
     rgb(62, 156, 103) 100%  
   );
+  max-width: 100%; /* Ensure container doesn't overflow */
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 /* Hero left section */
@@ -93,42 +171,31 @@ nav ul a:hover {
 
 .hero-left h1 {
   font-size: 3.5rem;
-  color: #1a3c2e; /* Darker color for better contrast */
+  color: #1a3c2e;
   margin-bottom: 20px;
   overflow: hidden;
   white-space: nowrap;
 }
 
-@keyframes blink-caret {
-  from, to { 
-    border-color: transparent; 
-  }
-  50% { 
-    border-color: #e9f4ec; 
-  }
-}
-
-
-
 .hero-left h3 {
   font-size: 1.8rem;
-  color: #2e5141; /* Darker shade for improved readability */
+  color: #2e5141;
   margin-bottom: 15px;
 }
 
 .hero-left p {
-  font-size: 1.1rem; /* Slightly larger font for body text */
-  color: #3d5a4b; /* Darker color for better readability */
+  font-size: 1.1rem;
+  color: #3d5a4b;
   line-height: 1.6;
   margin-bottom: 15px;
 }
 
-/* Updated Button Styling */
+/* Button Styling */
 .hero-left button {
   padding: 12px 25px;
   font-size: 1.1rem;
   color: #fff;
-  background: linear-gradient(to right, #32a852, #2a8f45); /* Updated button with gradient */
+  background: linear-gradient(to right, #32a852, #2a8f45);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -136,7 +203,7 @@ nav ul a:hover {
 }
 
 .hero-left button:hover {
-  background: linear-gradient(to right, #2fa348, #26903c); /* Hover gradient */
+  background: linear-gradient(to right, #2fa348, #26903c);
 }
 
 /* Hero right section */
@@ -146,7 +213,7 @@ nav ul a:hover {
   padding: 2rem;
   background-color: #f2fff8;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Softer shadow for a cleaner look */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Book Demo Form */
@@ -158,7 +225,7 @@ nav ul a:hover {
 .book-demo-form h3 {
   margin-bottom: 20px;
   font-size: 1.5rem;
-  color: #1a3c2e; /* Darker heading color */
+  color: #1a3c2e;
 }
 
 .book-demo-form div {
@@ -169,7 +236,7 @@ nav ul a:hover {
   width: 100%;
   padding: 12px;
   font-size: 1rem;
-  border: 1px solid #999; /* Darker border for inputs */
+  border: 1px solid #999;
   border-radius: 5px;
   box-sizing: border-box;
   outline: none;
@@ -199,7 +266,7 @@ nav ul a:hover {
   box-sizing: border-box;
 }
 
-/* Updated Button Styling */
+/* Button Styling */
 .book-demo-form button {
   display: inline-flex;
   align-items: center;
@@ -208,7 +275,7 @@ nav ul a:hover {
   padding: 12px;
   font-size: 1rem;
   color: #fff;
-  background: linear-gradient(to right, #36ac4f, #2e9246); /* Updated button with gradient */
+  background: linear-gradient(to right, #36ac4f, #2e9246);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -222,18 +289,187 @@ nav ul a:hover {
 /* Terms and Privacy Policy */
 .terms {
   margin-top: 20px;
-  font-size: 0.8rem; /* Slightly larger font for readability */
-  color: #555; /* Darker color for terms text */
+  font-size: 0.8rem;
+  color: #555;
   text-align: center;
 }
 
 .terms a {
-  color: #2f8f6c; /* Slightly darker green for links */
+  color: #2f8f6c;
   text-decoration: none;
 }
 
 .terms a:hover {
   text-decoration: underline;
+}
+
+/* --------------------------- Media Queries for Responsiveness --------------------------- */
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+  .hero-container {
+    flex-direction: row;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .hero-container {
+    padding: 2rem;
+    flex-direction: row;
+  }
+
+  .hero-left {
+    width: 60%;
+  }
+
+  .hero-left h1 {
+    font-size: 3rem;
+  }
+
+  .hero-right {
+    width: 35%;
+    padding: 1.5rem;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Adjust height for smaller screens */
+  }
+
+  .hero-left {
+    width: 100%;
+    text-align: center; /* Center the text for mobile */
+  }
+
+  .hero-left h1 {
+    font-size: 2.5rem;
+    margin-top: 25px;
+  }
+
+  .hero-left h3 {
+    font-size: 1.5rem;
+  }
+
+  .hero-left p {
+    font-size: 1rem;
+  }
+
+  .hero-left button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .hero-right {
+    width: 100%;
+    max-height: none;
+    margin-top: 2rem;
+  }
+}
+
+/* Very small screens (phones like 425px and below) */
+@media (max-width: 425px) {
+  .hero-container {
+    padding: 1rem;
+  }
+
+  .hero-left h1 {
+    font-size: 2rem;
+  }
+
+  .hero-left h3 {
+    font-size: 1.2rem; /* Decreased size */
+  }
+
+  .hero-left p {
+    font-size: 0.9rem; /* Decreased size */
+  }
+
+  .hero-left button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .hero-right {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .book-demo-form h3 {
+    font-size: 1.2rem;
+  }
+
+  .book-demo-form input {
+    padding: 10px;
+  }
+
+  .book-demo-form button {
+    padding: 10px;
+  }
+}
+
+/* Extra small screens (375px and below) */
+@media (max-width: 375px) {
+  .hero-left h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-left h3 {
+    font-size: 1.1rem; /* Decreased size */
+  }
+
+  .hero-left p {
+    font-size: 0.85rem; /* Decreased size */
+  }
+
+  .hero-left button {
+    font-size: 0.85rem;
+    padding: 7px 12px;
+  }
+
+  .hero-right {
+    padding: 0.8rem;
+  }
+}
+
+/* Tiny screens (320px and below) */
+@media (max-width: 320px) {
+  .hero-container {
+    padding: 0.5rem;
+    max-width: 100%; /* Fixes white space issue */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
+  .hero-left h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-left h3 {
+    font-size: 1rem; /* Decreased size */
+  }
+
+  .hero-left p {
+    font-size: 0.8rem; /* Decreased size */
+  }
+
+  .hero-left button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  .hero-right {
+    padding: 0.5rem;
+  }
+
+  .book-demo-form h3 {
+    font-size: 1rem;
+  }
 }
 
 
