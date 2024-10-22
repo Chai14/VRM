@@ -2,7 +2,7 @@ import React from 'react'
 import learning from '../assets/learning1.jpg'
 function AboutLearning() {
     return (
-        <>
+        
             <div className='about-container' id='about'>
                 <div className="about-header">
                     <span></span>
@@ -22,7 +22,7 @@ function AboutLearning() {
                 </div>
 
             </div>
-        </>
+        
     )
 }
 

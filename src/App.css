@@ -193,12 +193,16 @@ nav ul a:hover {
 .hero-left button {
   padding: 12px 25px;
   font-size: 1.1rem;
-  color: #fff;
   background: linear-gradient(to right, #32a852, #2a8f45);
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
+}
+
+.hero-left button a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .hero-left button:hover {
@@ -216,7 +220,7 @@ nav ul a:hover {
 }
 
 /* Book Demo Form */
-.book-demo-form {
+/* .book-demo-form {
   display: flex;
   flex-direction: column;
 }
@@ -239,10 +243,10 @@ nav ul a:hover {
   border-radius: 5px;
   box-sizing: border-box;
   outline: none;
-}
+} */
 
 /* Phone Number Field with Prefix */
-.phone-input {
+/* .phone-input {
   display: flex;
   align-items: center;
 }
@@ -263,10 +267,10 @@ nav ul a:hover {
   border: 1px solid #999;
   border-radius: 0 5px 5px 0;
   box-sizing: border-box;
-}
+} */
 
 /* Button Styling */
-.book-demo-form button {
+.hero-right button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1250,7 +1254,7 @@ nav ul a:hover {
 
 /* -------------------------------------- Footer ---------------------------------------------- */
 .footer-container {
-  background-color: #012312;
+  background-color: #2d2f36; /* Dark background as seen in the image */
   color: #fff;
   padding: 2rem 3rem;
   display: flex;
@@ -1265,45 +1269,34 @@ nav ul a:hover {
   margin-left: 5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  position: relative;
   background-color: white;
 }
 
-.footer-section.about img::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
-  border-radius: 10px;
-  z-index: 1;
+/* Columns inside footer */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  gap: 1rem; /* Adds space between sections */
+}
+
+.footer-section {
+  flex-basis: 30%; /* Ensures each section takes about 30% of the container width */
+  text-align: left;
 }
 
 .footer-title h2 {
   font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
-  padding: 1rem 5rem;
-}
-
-.footer-content {
-  width: 65%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; /* Flex-wrap to allow stacking on smaller screens */
-}
-
-.footer-section {
-  margin-bottom: 1.5rem;
-  flex: 1 1 300px; /* Allow sections to grow and shrink */
+  padding: 1rem 0;
 }
 
 .footer-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  color: #a0a0b0;
 }
 
 .footer-section ul li {
@@ -1312,11 +1305,12 @@ nav ul a:hover {
 
 .footer-section ul li a {
   font-size: 1rem;
-  color: #f2fff8;
+  color: #a0a0b0; /* Softer, muted link color */
   text-decoration: none;
 }
 
 .footer-section ul li a:hover {
+  color: #c084fc; /* Slight hover effect with a soft purple tone */
   text-decoration: underline;
 }
 
@@ -1330,21 +1324,27 @@ nav ul a:hover {
 .sub-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.356);
   text-align: center;
-  background-color: #1b3f2d;
+  background-color: #2d2f36;
   padding: 1.5rem 2rem;
 }
 
 .footer-bottom {
   margin-top: 1rem;
   font-size: 0.8rem;
-  color: #e0f7e9;
+  color: #a0a0b0;
+  text-align: center;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
+/* Social Icons and Badges */
 .social-icons {
-  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* Space between icons */
 }
 
 .social-icons ul {
@@ -1352,114 +1352,120 @@ nav ul a:hover {
   justify-content: space-between;
 }
 
+.social-icons ul li img {
+  width: 100px;
+  height: auto; /* Ensures badges maintain aspect ratio */
+}
+
 @media (max-width: 1024px) {
   .footer-container {
-      flex-direction: column;
-      padding: 2rem;
+    flex-direction: column;
+    padding: 2rem;
   }
 
   .footer-content {
-      width: 100%;
-      justify-content: center;
-      text-align: center;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .footer-section {
-      margin-bottom: 1rem;
-      width: 100%;
-      text-align: center;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
   }
 
   .footer-title h2 {
-      padding: 1rem 0;
+    padding: 1rem 0;
   }
 
   .social-icons {
-      width: 50%;
+    width: 50%;
   }
 }
 
 @media (max-width: 768px) {
   .footer-container {
-      padding: 1.5rem;
-      flex-direction: column;
+    padding: 1.5rem;
+    flex-direction: column;
   }
 
   .footer-section.about img {
-      width: 50%;
-      margin-left: 0;
+    width: 25%;
+    margin-left: 0;
   }
 
   .footer-content {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-section {
-      width: 100%;
-      text-align: center;
+    width: 100%;
+    text-align: center;
   }
 
   .social-icons {
-      width: 80%;
+    width: 50%;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 425px) {
   .footer-container {
-      padding: 1rem;
+    padding: 1rem;
   }
 
   .footer-section.about img {
-      width: 80%;
+    /* width: 80%; */
   }
 
   .footer-title h2 {
-      font-size: 1.2rem;
+    font-size: 1.2rem;
   }
 
   .footer-content {
-      width: 100%;
+    width: 100%;
   }
 
   .social-icons {
-      width: 100%;
-      justify-content: center;
+    width: 100%;
+    justify-content: center;
   }
 }
 
 @media (max-width: 320px) {
   .footer-container {
-      padding: 1rem;
-      flex-direction: column;
+    padding: 1rem;
+    flex-direction: column;
   }
 
   .footer-section.about img {
-      width: 90%;
+    width: 50%;
   }
 
   .footer-title h2 {
-      font-size: 1rem;
-      padding: 0.5rem;
+    font-size: 1rem;
+    padding: 0.5rem;
   }
 
   .footer-content {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-section {
-      width: 100%;
+    width: 100%;
   }
 
   .footer-section ul li a {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 
   .social-icons {
-      width: 100%;
+    width: 100%;
   }
 }
+
 
 /* ---------------------------------------------------------------------------------------------- */
 

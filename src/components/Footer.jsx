@@ -8,12 +8,7 @@ function Footer() {
     return (
         <div id='footer'>
             <footer className="footer-container" >
-                <div className="footer-section about">
-                    <div className="footer-title">
-                        <h2>VRM Foundation</h2>
-                        <img src={logo} alt="VRM Foundation Logo" />
-                    </div>
-                </div>
+               
                 <div className="footer-content">
                     {/* <div className="footer-section links">
                         <div className="footer-title">Products</div>
@@ -35,8 +30,18 @@ function Footer() {
                         <div className="footer-title">Contact Us</div>
                         {/* <p>Email: info@vrmfoundation.com</p>
                         <p>Phone: +91 12345 67890</p> */}
-                        <p>GoodWorks Infinity Park - Coworking Space <br/> Managed Office <br /> Virtual Office in Electronic City - 080887 07700</p>
+                        <ul>
+                        <li>GoodWorks Infinity Park - Coworking Space </li> 
+                        <li>Managed Office </li> 
+                        <li>Virtual Office in Electronic City - 080887 07700</li>
+                        </ul>
                     </div>
+                    <div className="footer-section about">
+                    <div className="footer-title">
+                        {/* <h2>VRM Foundation</h2> */}
+                        <img src={logo} alt="VRM Foundation Logo" />
+                    </div>
+                </div>
                 </div>
 
                 {/* Sub-Footer Section */}

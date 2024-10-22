@@ -25,11 +25,11 @@ function Hero() {
           <p>
             VMR Foundation delivers high-quality technical training, complemented by exceptional mentorship sessions with industry experts.
           </p>
-          <button href="#about">Learn More</button>
+          <button><a href="#about">Learn More</a></button>
         </div>
 
         <div className='hero-right'>
-          <form className='book-demo-form'>
+          {/* <form className='book-demo-form'>
             <h3>Book a <span>FREE</span> Demo</h3>
             <div>
               <input type='text' placeholder='Your Name' />
@@ -43,13 +43,13 @@ function Hero() {
                 <input type='tel' placeholder='Your Phone Number' />
               </div>
             </div>
-            <button type='submit' onClick={handleRegisterClick}>
-              Register <KeyboardDoubleArrowRightIcon />
-            </button>
             <p className='terms'>
               By continuing, you agree to the <a href='#'>VRM’s Terms</a> and <a href='#'>Privacy Policy</a>.
             </p>
-          </form>
+          </form> */}
+            <button type='submit' onClick={handleRegisterClick}>
+              Register Here<KeyboardDoubleArrowRightIcon />
+            </button>
         </div>
 
       </div>
