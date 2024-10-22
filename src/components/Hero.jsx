@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+// import './Hero.css';  // Import the updated CSS
+
 function Hero() {
+  const [showCart, setShowCart] = useState(false);  // State to toggle the cart
+
+  const handleRegisterClick = (e) => {
+    e.preventDefault();
+    setShowCart(true);  // Show the cart when register is clicked
+  };
+
+  const handleCloseCart = () => {
+    setShowCart(false);  // Hide the cart when the cross button is clicked
+  };
+
   return (
     <>
       <div className='hero-container'>
@@ -14,9 +27,10 @@ function Hero() {
           </p>
           <button href="#about">Learn More</button>
         </div>
+
         <div className='hero-right'>
           <form className='book-demo-form'>
-            <h3>Book a <span>  FREE </span>Demo</h3>
+            <h3>Book a <span>FREE</span> Demo</h3>
             <div>
               <input type='text' placeholder='Your Name' />
             </div>
@@ -29,15 +43,30 @@ function Hero() {
                 <input type='tel' placeholder='Your Phone Number' />
               </div>
             </div>
-            <button type='submit'>Register <KeyboardDoubleArrowRightIcon /></button>
+            <button type='submit' onClick={handleRegisterClick}>
+              Register <KeyboardDoubleArrowRightIcon />
+            </button>
             <p className='terms'>
               By continuing, you agree to the <a href='#'>VRM’s Terms</a> and <a href='#'>Privacy Policy</a>.
             </p>
           </form>
         </div>
+
       </div>
+
+      {/* Conditional rendering of the cart */}
+      {showCart && (
+        <div className="cart">
+          <button className="close-cart" onClick={handleCloseCart}>✖</button>
+          <h4>Select Your Course</h4>
+          <div className="cart-options">
+            <a href="https://www.geekster.in/courses/full-stack-web-developer/?utm_source=franchise&utm_medium=vrm&utm_campaign=fswd_vrm" target="_blank" rel="noopener noreferrer">Full Stack</a>
+            <a href="https://www.geekster.in/courses/data-science-artificial-intelligence/?utm_source=franchise&utm_medium=vrm&utm_campaign=dsai_vrm" target="_blank" rel="noopener noreferrer">Data Science</a>
+          </div>
+        </div>
+      )}
     </>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
