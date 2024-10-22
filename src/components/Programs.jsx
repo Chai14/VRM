@@ -34,7 +34,7 @@ function Programs() {
 
                         <div className="program-actions">
                             <button className="program-button">Download brochure</button>
-                            <a href="https://www.geekster.in/courses/full-stack-web-developer/?utm_source=franchise&utm_medium=vrm&utm_campaign=fswd_vrm" className="program-button"> Learn More </a>
+                            <a href="https://media.licdn.com/dms/image/D5612AQEsZgunaW298Q/article-cover_image-shrink_600_2000/0/1685946598300?e=2147483647&v=beta&t=SbyU-KhLTfE0egHZ_QvryZ8hbApj5NiLZvyNPTFBcmM" className="program-button"> Learn More </a>
                         </div>
                     </div>
                     <div className="program-card program-right">
