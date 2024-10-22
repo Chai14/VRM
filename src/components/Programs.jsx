@@ -38,7 +38,7 @@ function Programs() {
                         </div>
                     </div>
                     <div className="program-card program-right">
-                        <img src="https://3.imimg.com/data3/CA/YO/MY-12278373/images-datasciencedisciplines-500x500.png" alt="Data Science and Gen-AI" />
+                        <img src="https://tech.target.com/_next/image?url=https%3A%2F%2Ftarget.scene7.com%2Fis%2Fimage%2FTarget%2FGUEST_275b3df2-7679-4dc2-8666-c95924b8a201%3Fscl%3D1&w=1080&q=75" alt="Data Science and Gen-AI" />
                         <h3>Data Science and Gen-AI</h3>
                         <p>Partnered with E&ICT, IIT Guwahati and NSDC</p>
 
