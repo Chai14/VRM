@@ -29,8 +29,9 @@ function Hero() {
         </div>
 
         <div className='hero-right'>
+          <h3>Book a <span>FREE</span> Demo</h3>
+          <br />
           {/* <form className='book-demo-form'>
-            <h3>Book a <span>FREE</span> Demo</h3>
             <div>
               <input type='text' placeholder='Your Name' />
             </div>
